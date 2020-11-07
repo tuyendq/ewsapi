@@ -44,7 +44,7 @@ namespace HelloWorld
             // email.ToRecipients.Add("alex@htb.local");
             // email.ToRecipients.Add("Administrator@htb.local");    
             // Add email address from an array of recipients       
-            string[] Recipients = { "alex", "Administrator", "jea_test_account" };
+            string[] Recipients = { "Administrator","alex","bob","charles","david","davis","donald","edward","frans","fred","gregg","james","jea_test_account","jeff","jenny","jhon","jim","joe","joseph","kalle","kevin","knut","lars","lee","marshall","michael","richard","rober","robin","ronald","steven","stig","sven","teresa","thomas","travis","william" };
             foreach (string rcpt in Recipients)
             {
                 email.ToRecipients.Add(rcpt + "@htb.local");
