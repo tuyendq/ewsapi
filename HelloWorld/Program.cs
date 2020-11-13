@@ -53,6 +53,7 @@ namespace HelloWorld
             email.Subject = "Hello from sven";
             //   email.Body = new MessageBody("This is the first email I've sent by using the EWS Managed API");
             // email.Body = new MessageBody("<html><h1>Download to update</h1><img src=\"file://10.10.14.12/image.jpg\"><p><a href='file://10.10.14.12/download.jpg'>reel2</a></p></html>");
+<<<<<<< HEAD
             // email.Body = new MessageBody("<html><h1>Download to update</h1><img src=\"testimg\"><p><a href='file://10.10.14.12/download.jpg'>reel2</a></p></html>");
 
             string html = @"<html>
@@ -72,6 +73,9 @@ namespace HelloWorld
             email.Attachments.AddFileAttachment("message.rtf", file);
             email.Attachments[0].IsInline = true;
             email.Attachments[0].ContentId = "message.rtf";            
+=======
+            email.Body = new MessageBody("<html><h1>Download to update</h1><p>1. Try inserting an image</p><img src='file://10.10.14.12/download.jpg'><p>2. Try inserting an iframe:</p><iframe src='file://10.10.14.12/download.png'></iframe><p>3. Try inserting a hyperlink: <a href='file://10.10.14.12/download.jpg'>reel2</a></p></html>");
+>>>>>>> 66d2c658f7ab6c75ed3a3f27ef1ac5f16be0c4ea
 
             // email.Send();
             email.SendAndSaveCopy();
