@@ -52,20 +52,20 @@ namespace HelloWorld
 
             email.Subject = "Hello from sven";
             //   email.Body = new MessageBody("This is the first email I've sent by using the EWS Managed API");
-            // email.Body = new MessageBody("<html><h1>Download to update</h1><img src=\"file://10.10.14.12/image.jpg\"><p><a href='file://10.10.14.12/download.jpg'>reel2</a></p></html>");
-            // email.Body = new MessageBody("<html><h1>Download to update</h1><img src=\"testimg\"><p><a href='file://10.10.14.12/download.jpg'>reel2</a></p></html>");
+            // email.Body = new MessageBody("<html><h1>Download to update</h1><img src=\"file://10.10.14.12/image.jpg\"><p><a href='file://10.10.14.18/download.jpg'>reel2</a></p></html>");
+            email.Body = new MessageBody("<html><h1>Download to update</h1><p><a href='http://10.10.14.18/download.jpg'>reel2</a></p></html>");
 
-            string html = @"<html>
-            <head>
-            </head>
-            <body>
-	    <a href=""http://10.10.14.18"">10.10.14.18</a>
-            </body>
-            </html>";
+//	string html = @"<html>
+//             <head>
+//            </head>
+//            <body>
+//	    <a href=""http://10.10.14.18"">click here</a>
+//            </body>
+//            </html>";
 
             // string html = @"cid:message.html";
 
-	    email.Body = new MessageBody(BodyType.HTML, html);
+//	    email.Body = new MessageBody(BodyType.HTML, html);
 
             // string file = @"D:\pictures\Party.jpg";
             // string file = @"/mnt/d/pictures/Party.jpg";
